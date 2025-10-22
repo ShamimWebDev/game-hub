@@ -2,7 +2,7 @@
   {
     "id": "1",
     "title": "PUBG Mobile",
-    "coverPhoto": "https://ibb.co.com/ZzG1w4rX",
+    "coverPhoto": "/pubg-mobile.png",
     "category": "Battle Royale",
     "downloadLink": "https://www.pubgmobile.com/en-US/home.shtml",
     "description": "Battle royale game with intense multiplayer combat and strategic gameplay.",
@@ -26,7 +26,7 @@
     "category": "Simulation",
     "downloadLink": "https://example.com/stellarodyssey",
     "description": "Explore vast galaxies and build your space empire in this epic adventure.",
-    "ratings": "4.9",
+    "ratings": "4.7",
     "developer": "Galactic Works"
   },
   {
