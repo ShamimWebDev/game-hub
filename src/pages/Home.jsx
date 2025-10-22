@@ -1,14 +1,15 @@
 import React from "react";
-import GamesCard from "../components/GamesCard";
 import Banner from "../components/banner";
 import Newsletter from "../components/Newsletter";
+import PopularGames from "../components/PopularGames";
 
 const Home = () => {
   return (
     <div>
       <Banner></Banner>
-      <GamesCard></GamesCard>
+      <PopularGames></PopularGames>
       <Newsletter></Newsletter>
+      
     </div>
   );
 };

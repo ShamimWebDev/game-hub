@@ -2,7 +2,7 @@ import React from "react";
 
 const Newsletter = () => {
   return (
-    <section className="bg-linear-to-r from-[#112A39] to-[#4C1D71] py-16 px-6 text-center">
+    <section className="bg-linear-to-r from-[#112A39] to-[#4C1D71] py-25 px-6 text-center">
       <h3 className="text-3xl md:text-4xl font-bold text-white mb-4">
         Stay in the Game
       </h3>

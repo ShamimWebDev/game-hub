@@ -5,10 +5,11 @@ const Banner = () => {
   const { games, loading } = useContext(GameContext);
   const [current, setCurrent] = useState(0);
 
+  // Auto-slide every 3 seconds
   useEffect(() => {
     if (games && games.length > 0) {
       const interval = setInterval(() => {
-        setCurrent((prev) => (prev + 1) % Math.min(3, games.length));
+        setCurrent((prev) => (prev + 1) % Math.min(3, topGames.length));
       }, 3000);
       return () => clearInterval(interval);
     }
@@ -18,12 +19,15 @@ const Banner = () => {
   if (!games || games.length === 0)
     return <p className="text-center mt-10">No games available</p>;
 
-  const topGames = games.slice(0, 3);
+  // Top 3 highest rated games
+  const topGames = [...games]
+    .sort((a, b) => parseFloat(b.ratings) - parseFloat(a.ratings))
+    .slice(0, 3);
 
   return (
     <div className="w-full relative">
       {/* Slides */}
-      <div className="relative w-full h-60 md:h-96 overflow-hidden">
+      <div className="relative w-full h-80 md:h-[500px] overflow-hidden">
         {topGames.map((game, index) => (
           <div
             key={game.id}
@@ -40,7 +44,7 @@ const Banner = () => {
             />
 
             {/* Overlay */}
-            <div className="absolute inset-0 bg-black/50 flex flex-col justify-center items-center text-center px-4 md:px-0">
+            <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex flex-col justify-center items-center text-center px-4 md:px-0">
               <h2 className="text-2xl md:text-4xl font-bold text-white mb-2">
                 {game.title}
               </h2>
@@ -53,8 +57,8 @@ const Banner = () => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <button className="px-6 py-2 bg-green-400 text-black rounded hover:bg-green-500 transition">
-                  Explore
+                <button className="px-6 py-2 bg-gradient-to-r from-green-400 to-green-600 text-black rounded hover:brightness-110 transition">
+                  Download the game
                 </button>
               </a>
             </div>
@@ -67,8 +71,10 @@ const Banner = () => {
             <button
               key={game.id}
               onClick={() => setCurrent(index)}
-              className={`w-3 h-3 rounded-full bg-blue-500 transition-all duration-300 ${
-                index === current ? "opacity-100 scale-110" : "opacity-50"
+              className={`w-4 h-4 rounded-full transition-all duration-300 ${
+                index === current
+                  ? "opacity-100 scale-125 bg-gradient-to-r from-green-400 to-green-600"
+                  : "opacity-50 bg-gray-400"
               }`}
             ></button>
           ))}

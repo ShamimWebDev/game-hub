@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import { GameContext } from "../context/GameContext";
+import { Link } from "react-router-dom";
 
 const PopularGames = () => {
   const { games, loading } = useContext(GameContext);
@@ -13,11 +14,13 @@ const PopularGames = () => {
   }
 
   return (
-    <div className="bg-linear-to-r from-black via-gray-900 to-gray-800 p-10 ">
-      <h1 className="text-5xl text-center font-bold text-[#00FFFF] mb-10">
+    <div className="bg-gradient-to-r from-black via-gray-900 to-gray-800 py-12">
+      <h1 className="text-5xl text-center font-bold text-[#00FFFF] pb-5">
         Popular Games
       </h1>
-      <p className="text-2xl text-center font-bold text-[#CECECF]  mb-10">Discover the most loved games by our community</p>
+      <p className="text-2xl text-center font-bold text-[#CECECF] mb-10">
+        Discover the most loved games by our community
+      </p>
 
       <div className="flex flex-wrap gap-10 justify-center">
         {games.slice(0, 3).map((game) => (
@@ -33,9 +36,7 @@ const PopularGames = () => {
               />
             </figure>
             <div className="card-body">
-              <h2 className="card-title text-xl font-semibold">
-                {game.title}
-              </h2>
+              <h2 className="card-title text-xl font-semibold">{game.title}</h2>
               <p className="text-gray-400 text-sm">{game.description}</p>
 
               <div className="card-actions justify-between items-center mt-3">
@@ -50,18 +51,25 @@ const PopularGames = () => {
               </div>
 
               <div className="card-actions justify-end mt-4">
-                <a
-                  href={game.downloadLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn bg-green-400 hover:bg-green-500 text-black font-semibold"
+                <Link
+                  to={`/gamedetails/${game.id}`}
+                  className="w-full md:w-auto px-4 py-2 bg-gradient-to-r from-[#4C1D71] to-[#BE21E0] text-white font-semibold rounded-lg shadow-md hover:shadow-xl transform hover:scale-105 transition-all duration-300 text-center"
                 >
                   View Details
-                </a>
+                </Link>
               </div>
             </div>
           </div>
         ))}
+      </div>
+
+      <div className="flex justify-center items-center mt-10">
+        <Link
+          to="/allgames"
+          className="w-full md:w-auto px-6 py-3 bg-gradient-to-r from-[#4C1D71] to-[#BE21E0] text-white font-semibold rounded-lg shadow-md hover:shadow-xl transform hover:scale-105 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-[#BE21E0] text-center"
+        >
+          All Games
+        </Link>
       </div>
     </div>
   );
