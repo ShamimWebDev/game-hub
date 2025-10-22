@@ -2,31 +2,31 @@
   {
     "id": "1",
     "title": "PUBG Mobile",
-    "coverPhoto": "https://example.com/images/pubgmobile.png",
+    "coverPhoto": "https://ibb.co.com/ZzG1w4rX",
     "category": "Battle Royale",
     "downloadLink": "https://www.pubgmobile.com/en-US/home.shtml",
     "description": "Battle royale game with intense multiplayer combat and strategic gameplay.",
-    "ratings": "4.8",
+    "ratings": "4.9",
     "developer": "Krafton"
   },
   {
     "id": "2",
     "title": "Mystic Realms",
-    "coverPhoto": "https://example.com/images/mysticrealms.png",
+    "coverPhoto": "/mystic-realms.png",
     "category": "RPG",
     "downloadLink": "https://example.com/mysticrealms",
     "description": "Epic fantasy RPG with stunning visuals and immersive storytelling.",
-    "ratings": "4.8",
+    "ratings": "4.9",
     "developer": "Mystical Studios"
   },
   {
     "id": "3",
     "title": "Stellar Odyssey",
-    "coverPhoto": "https://example.com/images/stellarodyssey.png",
+    "coverPhoto": "/stellar-odyssey.png",
     "category": "Simulation",
     "downloadLink": "https://example.com/stellarodyssey",
     "description": "Explore vast galaxies and build your space empire in this epic adventure.",
-    "ratings": "4.7",
+    "ratings": "4.9",
     "developer": "Galactic Works"
   },
   {

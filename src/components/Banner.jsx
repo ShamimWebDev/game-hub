@@ -1,18 +1,79 @@
-import React from "react";
+import React, { useContext, useEffect, useState } from "react";
+import { GameContext } from "../context/GameContext";
 
 const Banner = () => {
+  const { games, loading } = useContext(GameContext);
+  const [current, setCurrent] = useState(0);
+
+  // Auto-slide every 5 seconds
+  useEffect(() => {
+    if (games && games.length > 0) {
+      const interval = setInterval(() => {
+        setCurrent((prev) => (prev + 1) % Math.min(3, games.length));
+      }, 2000); // 5 seconds
+      return () => clearInterval(interval);
+    }
+  }, [games]);
+
+  if (loading) return <p className="text-center mt-10">Loading...</p>;
+
+  if (!games || games.length === 0)
+    return <p className="text-center mt-10">No games available</p>;
+
+  const handleDotClick = (index) => setCurrent(index);
+
   return (
-    <div>
-      <section className="bg-gradient-to-r from-purple-700 to-blue-700 text-white text-center py-20 px-6">
-        <h2 className="text-4xl md:text-5xl font-bold mb-4">Mystic Realms</h2>
-        <p className="max-w-2xl mx-auto mb-6">
-          Embark on an epic fantasy adventure with stunning visuals and
-          immersive gameplay.
-        </p>
-        <button className="px-6 py-3 bg-green-400 text-black font-semibold rounded hover:bg-green-500">
-          Explore
-        </button>
-      </section>
+    <div className="w-full relative">
+      {/* Slides */}
+      <div className="relative w-full h-60 md:h-96 overflow-hidden ">
+        {games.slice(0, 3).map((game, index) => (
+          <div
+            key={game.id}
+            className={`absolute inset-0 transition-opacity duration-700 ${
+              index === current
+                ? "opacity-100 z-10"
+                : "opacity-0 z-0 pointer-events-none"
+            }`}
+          >
+            <img
+              src={game.coverPhot}
+              alt={game.title}
+              className="w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 bg-black bg-opacity-40 flex flex-col justify-center items-center text-center px-4 md:px-0">
+              <h2 className="text-2xl md:text-4xl font-bold text-white mb-2">
+                {game.title}
+              </h2>
+              <p className="text-white mb-2">{game.description}</p>
+              <p className="text-yellow-400 font-semibold mb-4">
+                ⭐ {game.ratings}
+              </p>
+              <a
+                href={game.downloadLink}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <button className="px-6 py-2 bg-green-400 text-black rounded hover:bg-green-500">
+                  Explore
+                </button>
+              </a>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {/* Dots */}
+      <div className="flex justify-center gap-3 mt-4">
+        {games.slice(0, 3).map((_, index) => (
+          <button
+            key={index}
+            onClick={() => handleDotClick(index)}
+            className={`w-3 h-3 rounded-full bg-blue-500 transition-all duration-300 ${
+              index === current ? "opacity-100" : "opacity-50"
+            }`}
+          ></button>
+        ))}
+      </div>
     </div>
   );
 };
