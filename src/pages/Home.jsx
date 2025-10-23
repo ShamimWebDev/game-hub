@@ -1,16 +1,18 @@
 import React from "react";
-import Banner from "../components/banner";
+
 import Newsletter from "../components/Newsletter";
+import Banner from "../components/banner";
+
 import PopularGames from "../components/PopularGames";
 
 const Home = () => {
   return (
-    <div>
+    <>
       <Banner></Banner>
       <PopularGames></PopularGames>
-      <Newsletter></Newsletter>
-      
-    </div>
+
+      <Newsletter />
+    </>
   );
 };
 

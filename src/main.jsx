@@ -1,15 +1,31 @@
-import { StrictMode } from "react";
+import React, { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import "./index.css";
-import App from "./App.jsx";
-import { RouterProvider } from "react-router";
-import router from "./routes/router.jsx";
-import { GameProvider } from "./context/GameContext.jsx";
+import App from "./App";
+import { RouterProvider } from "react-router-dom";
+import router from "./routes/router";
+import { GameProvider } from "./context/GameContext";
+import AuthProvider from "./context/AuthProvider";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <GameProvider>
-      <RouterProvider router={router}></RouterProvider>
-    </GameProvider>
+    <AuthProvider>
+      <GameProvider>
+        <RouterProvider router={router} />
+        <ToastContainer
+          position="top-right"
+          autoClose={3000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+        />
+      </GameProvider>
+    </AuthProvider>
   </StrictMode>
 );

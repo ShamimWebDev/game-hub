@@ -9,14 +9,14 @@ export const GameProvider = ({ children }) => {
   useEffect(() => {
     fetch("/games.json")
       .then((res) => res.json())
-      
       .then((data) => {
-        // console.log(" data:", data);
-        
         setGames(data);
         setLoading(false);
       })
-      .catch((err) => console.error("Failed to load games:", err));
+      .catch((err) => {
+        console.error("Failed to load games:", err);
+        setLoading(false);
+      });
   }, []);
 
   return (

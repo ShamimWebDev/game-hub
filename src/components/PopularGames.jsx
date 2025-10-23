@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import { GameContext } from "../context/GameContext";
+import GameCard from "../components/GameCard";
 import { Link } from "react-router-dom";
 
 const PopularGames = () => {
@@ -23,50 +24,19 @@ const PopularGames = () => {
       </p>
 
       <div className="flex flex-wrap gap-10 justify-center">
-        {games.slice(0, 3).map((game) => (
-          <div
-            key={game.id}
-            className="card w-80 bg-gray-900 text-white shadow-xl hover:scale-105 transition-transform duration-300"
-          >
-            <figure>
-              <img
-                src={game.coverPhoto}
-                alt={game.title}
-                className="w-full h-48 object-cover rounded-t-lg"
-              />
-            </figure>
-            <div className="card-body">
-              <h2 className="card-title text-xl font-semibold">{game.title}</h2>
-              <p className="text-gray-400 text-sm">{game.description}</p>
-
-              <div className="card-actions justify-between items-center mt-3">
-                <div className="badge badge-outline border-yellow-400 text-yellow-400">
-                  {game.category}
-                </div>
-                <div className="flex items-center">
-                  <span className="text-yellow-400 font-semibold">
-                    ⭐ {game.ratings}
-                  </span>
-                </div>
-              </div>
-
-              <div className="card-actions justify-end mt-4">
-                <Link
-                  to={`/gamedetails/${game.id}`}
-                  className="w-full md:w-auto px-4 py-2 bg-gradient-to-r from-[#4C1D71] to-[#BE21E0] text-white font-semibold rounded-lg shadow-md hover:shadow-xl transform hover:scale-105 transition-all duration-300 text-center"
-                >
-                  View Details
-                </Link>
-              </div>
-            </div>
-          </div>
-        ))}
+        {games && games.length > 0 ? (
+          games
+            .slice(0, 3)
+            .map((game) => <GameCard key={game.id} game={game} />)
+        ) : (
+          <p className="text-center text-white">No games available</p>
+        )}
       </div>
 
       <div className="flex justify-center items-center mt-10">
         <Link
           to="/allgames"
-          className="w-full md:w-auto px-6 py-3 bg-gradient-to-r from-[#4C1D71] to-[#BE21E0] text-white font-semibold rounded-lg shadow-md hover:shadow-xl transform hover:scale-105 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-[#BE21E0] text-center"
+          className="w-full md:w-auto px-6 py-3 bg-gradient-to-r from-[#4C1D71] to-[#BE21E0] text-white font-semibold rounded-lg shadow-md hover:shadow-xl transform hover:scale-105 transition-all duration-300 text-center"
         >
           All Games
         </Link>
