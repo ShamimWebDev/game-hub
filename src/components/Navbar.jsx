@@ -1,7 +1,7 @@
 import React, { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../context/AuthContext";
-import { FaSignInAlt, FaUserPlus } from "react-icons/fa"; // import icons
+import { FaSignInAlt, FaUserPlus } from "react-icons/fa";
 
 const Navbar = () => {
   const { user, signOutFunc } = useContext(AuthContext);
@@ -27,6 +27,26 @@ const Navbar = () => {
         GameHub
       </Link>
 
+      {/* Middle navigation links */}
+      <div className="flex gap-6 items-center">
+        <Link to="/" className="hover:text-[#00FFFF]">
+          Home
+        </Link>
+        <Link to="/allgames" className="hover:text-[#00FFFF]">
+          All Games
+        </Link>
+        <Link to="/about-us" className="hover:text-[#00FFFF]">
+          About Us
+        </Link>
+        <Link to="/contact" className="hover:text-[#00FFFF]">
+          Contact
+        </Link>
+        <Link to="/faq" className="hover:text-[#00FFFF]">
+          FAQ
+        </Link>
+      </div>
+
+      {/* Right side user/auth section */}
       <div className="flex items-center gap-4 relative">
         {user ? (
           <>

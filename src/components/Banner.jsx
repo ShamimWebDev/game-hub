@@ -24,7 +24,7 @@ const Banner = () => {
 
   return (
     <div className="w-full relative">
-      <div className="relative w-full h-80 md:h-[500px] overflow-hidden rounded-lg bg-gradient-to-r from-black via-gray-900 to-gray-800">
+      <div className="relative w-full h-80 md:h-[500px] overflow-hidden  bg-gradient-to-r from-black via-gray-900 to-gray-800">
         {topGames.map((game, index) => (
           <div
             key={game.id}

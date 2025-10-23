@@ -1,10 +1,12 @@
 import React, { useContext, useState } from "react";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import { AuthContext } from "../context/AuthContext";
-import { FaGoogle } from "react-icons/fa";
 import { toast } from "react-toastify";
+import useDocumentTitle from "../hook/useDocumentTitle";
+import { FcGoogle } from "react-icons/fc";
 
 const Signin = () => {
+  useDocumentTitle("Signin");
   const { signInWithEmailAndPasswordFunc, signInWithGoogleFunc, setLoading } =
     useContext(AuthContext);
   const [email, setEmail] = useState("");
@@ -77,7 +79,7 @@ const Signin = () => {
           onClick={handleGoogle}
           className="w-full flex items-center justify-center gap-3 px-4 py-2 rounded-lg bg-[#062733] border border-[#0FB7D1] text-white"
         >
-          <FaGoogle className="text-red-500" /> Continue with Google
+          <FcGoogle className=" text-2xl" /> Continue with Google
         </button>
 
         <p className="mt-4 text-center text-sm text-gray-400">

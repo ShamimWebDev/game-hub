@@ -1,8 +1,10 @@
 import React, { useContext, useState } from "react";
 import { AuthContext } from "../context/AuthContext";
 import { toast } from "react-toastify";
+import useDocumentTitle from "../hook/useDocumentTitle";
 
 const Profile = () => {
+     useDocumentTitle("Profile");
   const { user, updateProfileFunc } = useContext(AuthContext);
 
   const [name, setName] = useState(user?.displayName || "");

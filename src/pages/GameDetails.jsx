@@ -1,8 +1,10 @@
 import React, { useContext } from "react";
 import { useParams } from "react-router-dom";
 import { GameContext } from "../context/GameContext";
+import useDocumentTitle from "../hook/useDocumentTitle";
 
 const GameDetails = () => {
+  useDocumentTitle("GameDetails");
   const { id } = useParams();
   const { games, loading } = useContext(GameContext);
 

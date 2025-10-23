@@ -1,15 +1,39 @@
-import React from "react";
-import { RouterProvider } from "react-router-dom";
-import router from "./routes/router";
-import { ToastContainer } from "react-toastify";
+import { Routes, Route, useLocation } from "react-router-dom";
+import { AnimatePresence } from "motion/react";
+import PageLoader from "./components/PageLoader";
+import PageTransition from "./components/PageTransition";
 
-function App() {
+import Home from "./pages/Home";
+import AllGames from "./pages/AllGames";
+
+export default function App() {
+  const location = useLocation();
+  const [isPageLoading, setIsPageLoading] = useState(false);
+
   return (
     <>
-      <RouterProvider router={router} />
-      <ToastContainer position="top-right" />
+      <AnimatePresence>{isPageLoading && <PageLoader />}</AnimatePresence>
+
+      <AnimatePresence mode="wait">
+        <Routes location={location} key={location.pathname}>
+          <Route
+            path="/"
+            element={
+              <PageTransition>
+                <Home setIsPageLoading={setIsPageLoading} />
+              </PageTransition>
+            }
+          />
+          <Route
+            path="/allgames"
+            element={
+              <PageTransition>
+                <AllGames setIsPageLoading={setIsPageLoading} />
+              </PageTransition>
+            }
+          />
+        </Routes>
+      </AnimatePresence>
     </>
   );
 }
-
-export default App;

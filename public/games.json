@@ -32,7 +32,7 @@
   {
     "id": "4",
     "title": "Player Unknowns Battle Ground: PUBG",
-    "coverPhoto": "https://example.com/images/pubg.png",
+    "coverPhoto": "/stellar-odyssey.png",
     "category": "FPS",
     "downloadLink": "https://www.pubgmobile.com/en-US/home.shtml",
     "description": "PUBG Mobile is a fast-paced battle royale game where players fight for survival, strategy, and victory on dynamic maps.",
@@ -42,7 +42,7 @@
   {
     "id": "5",
     "title": "Call of Duty: Mobile",
-    "coverPhoto": "https://example.com/images/codmobile.png",
+    "coverPhoto": "/stellar-odyssey.png",
     "category": "FPS",
     "downloadLink": "https://www.callofduty.com/mobile",
     "description": "Call of Duty: Mobile brings the iconic multiplayer and battle royale modes to mobile with intense gameplay and stunning graphics.",
@@ -52,7 +52,7 @@
   {
     "id": "6",
     "title": "Garena Free Fire",
-    "coverPhoto": "https://example.com/images/freefire.png",
+    "coverPhoto": "/stellar-odyssey.png",
     "category": "Battle Royale",
     "downloadLink": "https://ff.garena.com/",
     "description": "Free Fire is a survival shooter game where 50 players parachute onto an island and fight to be the last one standing.",
@@ -62,7 +62,7 @@
   {
     "id": "7",
     "title": "Mobile Legends: Bang Bang",
-    "coverPhoto": "https://example.com/images/mobilelegends.png",
+    "coverPhoto": "/stellar-odyssey.png",
     "category": "MOBA",
     "downloadLink": "https://m.mobilelegends.com/",
     "description": "Mobile Legends is a 5v5 multiplayer online battle arena game that offers fast-paced and competitive matches.",
@@ -72,7 +72,7 @@
   {
     "id": "8",
     "title": "Clash of Clans",
-    "coverPhoto": "https://example.com/images/clashofclans.png",
+    "coverPhoto": "/stellar-odyssey.png",
     "category": "Strategy",
     "downloadLink": "https://supercell.com/en/games/clashofclans/",
     "description": "Clash of Clans is a strategy-based mobile game where players build villages, train troops, and raid others for loot.",
@@ -82,7 +82,7 @@
   {
     "id": "9",
     "title": "Among Us",
-    "coverPhoto": "https://example.com/images/amongus.png",
+    "coverPhoto": "/stellar-odyssey.png",
     "category": "Social Deduction",
     "downloadLink": "https://innersloth.com/gameAmongUs.php",
     "description": "Among Us is a multiplayer game of teamwork and betrayal set in space, where crewmates must identify impostors.",
@@ -92,7 +92,7 @@
   {
     "id": "10",
     "title": "Genshin Impact",
-    "coverPhoto": "https://example.com/images/genshinimpact.png",
+    "coverPhoto": "/stellar-odyssey.png",
     "category": "Action RPG",
     "downloadLink": "https://genshin.hoyoverse.com/",
     "description": "Genshin Impact is an open-world action RPG that lets players explore a vast fantasy world filled with magic and adventure.",
@@ -102,7 +102,7 @@
   {
     "id": "11",
     "title": "Subway Surfers",
-    "coverPhoto": "https://example.com/images/subwaysurfers.png",
+    "coverPhoto": "/stellar-odyssey.png",
     "category": "Arcade",
     "downloadLink": "https://sybogames.com/games/subway-surfers/",
     "description": "Subway Surfers is an endless runner game where players dash through train tracks to escape the inspector and his dog.",
@@ -112,7 +112,7 @@
   {
     "id": "12",
     "title": "Asphalt 9: Legends",
-    "coverPhoto": "https://example.com/images/asphalt9.png",
+    "coverPhoto": "/stellar-odyssey.png",
     "category": "Racing",
     "downloadLink": "https://asphaltlegends.com/",
     "description": "Asphalt 9: Legends offers high-speed racing action with real cars, incredible tracks, and cinematic graphics.",
@@ -122,7 +122,7 @@
   {
     "id": "13",
     "title": "Minecraft",
-    "coverPhoto": "https://example.com/images/minecraft.png",
+    "coverPhoto": "/stellar-odyssey.png",
     "category": "Sandbox",
     "downloadLink": "https://www.minecraft.net/en-us",
     "description": "Minecraft is a sandbox game that allows players to build, explore, and survive in a block-based world full of creativity.",
@@ -132,7 +132,7 @@
   {
     "id": "14",
     "title": "Fortnite",
-    "coverPhoto": "https://example.com/images/fortnite.png",
+    "coverPhoto": "/stellar-odyssey.png",
     "category": "Battle Royale",
     "downloadLink": "https://www.epicgames.com/fortnite/en-US/home",
     "description": "Fortnite combines building mechanics with fast-paced battle royale gameplay and vibrant, ever-changing worlds.",
@@ -142,7 +142,7 @@
   {
     "id": "15",
     "title": "Valorant",
-    "coverPhoto": "https://example.com/images/valorant.png",
+    "coverPhoto": "/stellar-odyssey.png",
     "category": "FPS",
     "downloadLink": "https://playvalorant.com/",
     "description": "Valorant is a competitive 5v5 hero shooter where tactical gameplay meets precision gunfights and strategic teamwork.",
@@ -152,7 +152,7 @@
   {
     "id": "16",
     "title": "League of Legends: Wild Rift",
-    "coverPhoto": "https://example.com/images/wildrift.png",
+    "coverPhoto": "/stellar-odyssey.png",
     "category": "MOBA",
     "downloadLink": "https://wildrift.leagueoflegends.com/",
     "description": "Wild Rift brings the classic League of Legends MOBA experience to mobile with fast matches and rich strategy.",
@@ -162,7 +162,7 @@
   {
     "id": "17",
     "title": "Apex Legends Mobile",
-    "coverPhoto": "https://example.com/images/apexlegends.png",
+    "coverPhoto": "/stellar-odyssey.png",
     "category": "Battle Royale",
     "downloadLink": "https://www.ea.com/games/apex-legends",
     "description": "Apex Legends Mobile is a fast-paced hero-based battle royale offering unique character abilities and team play.",
@@ -172,7 +172,7 @@
   {
     "id": "18",
     "title": "Candy Crush Saga",
-    "coverPhoto": "https://example.com/images/candycrush.png",
+    "coverPhoto": "/stellar-odyssey.png",
     "category": "Puzzle",
     "downloadLink": "https://king.com/game/candycrush",
     "description": "Candy Crush Saga is a match-three puzzle game filled with sweet challenges and colorful levels.",
@@ -182,7 +182,7 @@
   {
     "id": "19",
     "title": "Brawl Stars",
-    "coverPhoto": "https://example.com/images/brawlstars.png",
+    "coverPhoto": "/stellar-odyssey.png",
     "category": "Action",
     "downloadLink": "https://supercell.com/en/games/brawlstars/",
     "description": "Brawl Stars is a fast-paced 3v3 multiplayer and battle royale game filled with fun and chaos.",
@@ -192,7 +192,7 @@
   {
     "id": "20",
     "title": "Clash Royale",
-    "coverPhoto": "https://example.com/images/clashroyale.png",
+    "coverPhoto": "/stellar-odyssey.png",
     "category": "Strategy",
     "downloadLink": "https://supercell.com/en/games/clashroyale/",
     "description": "Clash Royale combines real-time strategy, tower defense, and collectible cards in thrilling battles.",
@@ -202,7 +202,7 @@
   {
     "id": "21",
     "title": "Temple Run 2",
-    "coverPhoto": "https://example.com/images/templerun2.png",
+    "coverPhoto": "/stellar-odyssey.png",
     "category": "Arcade",
     "downloadLink": "https://imangistudios.com/games/temple-run-2/",
     "description": "Temple Run 2 is an endless running game that challenges players to escape from deadly traps and obstacles.",
@@ -212,7 +212,7 @@
   {
     "id": "22",
     "title": "Roblox",
-    "coverPhoto": "https://example.com/images/roblox.png",
+    "coverPhoto": "/stellar-odyssey.png",
     "category": "Sandbox",
     "downloadLink": "https://www.roblox.com/",
     "description": "Roblox is an online platform where players can create, share, and play games made by the community.",
@@ -222,7 +222,7 @@
   {
     "id": "23",
     "title": "Pokemon GO",
-    "coverPhoto": "https://example.com/images/pokemongo.png",
+    "coverPhoto": "/stellar-odyssey.png",
     "category": "Adventure",
     "downloadLink": "https://pokemongolive.com/",
     "description": "Pokemon GO is an augmented reality game where players explore the real world to catch, train, and battle Pokemon.",

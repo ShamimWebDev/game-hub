@@ -6,8 +6,12 @@ import Register from "../pages/Register";
 import Signin from "../pages/Signin";
 import Profile from "../pages/Profile";
 import GameDetails from "../pages/GameDetails";
-import PrivateRoute from "../privateRoute/PrivateRoute";
 import AllGames from "../pages/AllGames";
+import AboutUs from "../pages/AboutUs";
+import Contact from "../pages/Contact";
+import FAQ from "../pages/FAQ";
+import NotFound from "../pages/NotFound";
+import PrivateRoute from "../privateRoute/PrivateRoute";
 
 const router = createBrowserRouter([
   {
@@ -27,6 +31,7 @@ const router = createBrowserRouter([
     ],
   },
 
+  // Public pages with navbar/footer
   {
     path: "register",
     element: (
@@ -43,7 +48,32 @@ const router = createBrowserRouter([
       </DefaultLayout>
     ),
   },
+  {
+    path: "/about-us",
+    element: (
+      <DefaultLayout>
+        <AboutUs />
+      </DefaultLayout>
+    ),
+  },
+  {
+    path: "/contact",
+    element: (
+      <DefaultLayout>
+        <Contact />
+      </DefaultLayout>
+    ),
+  },
+  {
+    path: "/faq",
+    element: (
+      <DefaultLayout>
+        <FAQ />
+      </DefaultLayout>
+    ),
+  },
 
+  // Private route
   {
     path: "gamedetails/:id",
     element: (
@@ -55,9 +85,10 @@ const router = createBrowserRouter([
     ),
   },
 
+  // 404 page
   {
     path: "*",
-    element: <p className="text-center text-white mt-10">404 Page Not Found</p>,
+    element: <NotFound />,
   },
 ]);
 
