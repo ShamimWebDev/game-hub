@@ -4,6 +4,7 @@ import { AuthContext } from "../context/AuthContext";
 import { toast } from "react-toastify";
 import useDocumentTitle from "../hook/useDocumentTitle";
 import { FcGoogle } from "react-icons/fc";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 const Signin = () => {
   useDocumentTitle("Signin");
@@ -11,6 +12,7 @@ const Signin = () => {
     useContext(AuthContext);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
   const from = location.state?.from || "/";
@@ -56,17 +58,24 @@ const Signin = () => {
             className="w-full px-4 py-2 rounded-lg bg-[#0F2430] border border-[#1E9DBE] text-white focus:outline-none"
           />
 
-          <input
-            type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            placeholder="Password"
-            required
-            className="w-full px-4 py-2 rounded-lg bg-[#0F2430] border border-[#1E9DBE] text-white focus:outline-none"
-          />
+          <div className="relative">
+            <input
+              type={showPassword ? "text" : "password"}
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              placeholder="Password"
+              required
+              className="w-full px-4 py-2 rounded-lg bg-[#0F2430] border border-[#1E9DBE] text-white focus:outline-none"
+            />
+            <span
+              className="absolute right-3 top-2/4 -translate-y-2/4 cursor-pointer text-gray-300"
+              onClick={() => setShowPassword(!showPassword)}
+            >
+              {!showPassword ? <FaEyeSlash /> : <FaEye />}
+            </span>
+          </div>
 
           <div className="text-right">
-            {/* Forgot Password link */}
             <Link
               to="/forget-password"
               state={{ email }}
