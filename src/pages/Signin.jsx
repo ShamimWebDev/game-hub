@@ -20,7 +20,7 @@ const Signin = () => {
     setLoading(true);
     signInWithEmailAndPasswordFunc(email, password)
       .then(() => {
-        toast.success("Logged in successfully");
+        toast.success("Logged in successfully!");
         navigate(from, { replace: true });
       })
       .catch((err) => toast.error(err.message || "Login failed"))
@@ -31,7 +31,7 @@ const Signin = () => {
     setLoading(true);
     signInWithGoogleFunc()
       .then(() => {
-        toast.success("Signed in with Google");
+        toast.success("Signed in with Google!");
         navigate(from, { replace: true });
       })
       .catch((err) => toast.error(err.message || "Google sign-in failed"))
@@ -43,8 +43,7 @@ const Signin = () => {
       <div className="w-full max-w-md p-8 bg-white/5 border border-white/10 rounded-2xl shadow-lg">
         <h2 className="text-2xl font-bold text-[#63E6F6] mb-2">Welcome back</h2>
         <p className="text-sm text-gray-300 mb-6">
-          Sign in to continue to <span className="text-[#63E6F6]">GameHub</span>
-          .
+          Sign in to continue to <span className="text-[#63E6F6]">GameHub</span>.
         </p>
 
         <form onSubmit={handleSubmit} className="space-y-4">
@@ -56,6 +55,7 @@ const Signin = () => {
             required
             className="w-full px-4 py-2 rounded-lg bg-[#0F2430] border border-[#1E9DBE] text-white focus:outline-none"
           />
+
           <input
             type="password"
             value={password}
@@ -64,6 +64,17 @@ const Signin = () => {
             required
             className="w-full px-4 py-2 rounded-lg bg-[#0F2430] border border-[#1E9DBE] text-white focus:outline-none"
           />
+
+          <div className="text-right">
+            {/* Forgot Password link */}
+            <Link
+              to="/forget-password"
+              state={{ email }}
+              className="text-sm text-[#63E6F6] underline"
+            >
+              Forgot Password?
+            </Link>
+          </div>
 
           <button
             type="submit"
@@ -79,7 +90,7 @@ const Signin = () => {
           onClick={handleGoogle}
           className="w-full flex items-center justify-center gap-3 px-4 py-2 rounded-lg bg-[#062733] border border-[#0FB7D1] text-white"
         >
-          <FcGoogle className=" text-2xl" /> Continue with Google
+          <FcGoogle className="text-2xl" /> Continue with Google
         </button>
 
         <p className="mt-4 text-center text-sm text-gray-400">

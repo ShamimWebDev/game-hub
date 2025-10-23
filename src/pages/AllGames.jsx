@@ -44,7 +44,7 @@ const AllGames = () => {
       ) : (
         <Suspense fallback={<LoadingSkeleton />}>
           <motion.div
-            className="max-w-7xl mx-auto px-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"
+            className="max-w-7xl mx-auto px-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10"
             variants={containerVariants}
             initial="hidden"
             animate="visible"

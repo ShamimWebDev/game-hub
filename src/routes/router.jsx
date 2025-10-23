@@ -5,6 +5,7 @@ import Home from "../pages/Home";
 import Register from "../pages/Register";
 import Signin from "../pages/Signin";
 import Profile from "../pages/Profile";
+import UpdateProfile from "../pages/UpdateProfile";
 import GameDetails from "../pages/GameDetails";
 import AllGames from "../pages/AllGames";
 import AboutUs from "../pages/AboutUs";
@@ -12,6 +13,8 @@ import Contact from "../pages/Contact";
 import FAQ from "../pages/FAQ";
 import NotFound from "../pages/NotFound";
 import PrivateRoute from "../privateRoute/PrivateRoute";
+import PublicRoute from "../privateRoute/PublicRoute"; // <-- PublicRoute
+import ForgetPassword from "../pages/ForgetPassword";
 
 const router = createBrowserRouter([
   {
@@ -27,25 +30,37 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
       },
+      {
+        path: "update-profile",
+        element: (
+          <PrivateRoute>
+            <UpdateProfile />
+          </PrivateRoute>
+        ),
+      },
       { path: "allgames", element: <AllGames /> },
     ],
   },
 
-  // Public pages with navbar/footer
+  // Public pages (hidden if logged-in)
   {
     path: "register",
     element: (
-      <DefaultLayout>
-        <Register />
-      </DefaultLayout>
+      <PublicRoute>
+        <DefaultLayout>
+          <Register />
+        </DefaultLayout>
+      </PublicRoute>
     ),
   },
   {
     path: "signin",
     element: (
-      <DefaultLayout>
-        <Signin />
-      </DefaultLayout>
+      <PublicRoute>
+        <DefaultLayout>
+          <Signin />
+        </DefaultLayout>
+      </PublicRoute>
     ),
   },
   {
@@ -82,6 +97,16 @@ const router = createBrowserRouter([
           <GameDetails />
         </DefaultLayout>
       </PrivateRoute>
+    ),
+  },
+
+  // Forget password (accessible publicly)
+  {
+    path: "/forget-password",
+    element: (
+      <DefaultLayout>
+        <ForgetPassword />
+      </DefaultLayout>
     ),
   },
 

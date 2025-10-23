@@ -10,6 +10,7 @@ const HomeLayouts = () => {
       <main>
         <Outlet />
       </main>
+
       <Footer />
     </>
   );

@@ -1,39 +1,14 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import { AuthContext } from "../context/AuthContext";
-import { toast } from "react-toastify";
 import useDocumentTitle from "../hook/useDocumentTitle";
+import { Link } from "react-router-dom";
 
 const Profile = () => {
-     useDocumentTitle("Profile");
-  const { user, updateProfileFunc } = useContext(AuthContext);
+  useDocumentTitle("Profile");
+  const { user } = useContext(AuthContext);
 
-  const [name, setName] = useState(user?.displayName || "");
-  const [email, setEmail] = useState(user?.email || "");
-  const [photoURL, setPhotoURL] = useState(user?.photoURL || "");
-  const [loading, setLoading] = useState(false);
-
-  if (!user) return <p className="text-white text-center mt-10">Loading...</p>;
-
-  const handleUpdate = async (e) => {
-    e.preventDefault();
-    if (!name || !email || !photoURL) {
-      toast.error("Name, email, and photo URL cannot be empty.");
-      return;
-    }
-
-    try {
-      setLoading(true);
-
-      await updateProfileFunc(name, photoURL);
-
-      toast.success("Profile updated successfully!");
-      setLoading(false);
-    } catch (err) {
-      console.error(err);
-      toast.error("Failed to update profile.");
-      setLoading(false);
-    }
-  };
+  if (!user)
+    return <p className="text-white text-center mt-10">Loading...</p>;
 
   return (
     <div className="min-h-screen bg-gray-900 text-white flex flex-col items-center py-12 px-4">
@@ -42,44 +17,28 @@ const Profile = () => {
       <div className="flex flex-col md:flex-row items-center gap-10 bg-gray-800 p-8 rounded-xl shadow-lg w-full max-w-3xl">
         {/* Profile Image */}
         <img
-          src={photoURL || "https://via.placeholder.com/150"}
-          alt={name}
+          src={user.photoURL || "https://via.placeholder.com/150"}
+          alt={user.displayName}
           className="w-40 h-40 rounded-full object-cover border-4 border-[#00FFFF]"
         />
 
-        {/* Update Form */}
-        <div className="flex-1">
-          <form onSubmit={handleUpdate} className="flex flex-col gap-4">
-            <input
-              type="text"
-              placeholder="Update Name"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-              className="input input-bordered w-full bg-white/20 text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-pink-400"
-            />
-            <input
-              type="email"
-              placeholder="Update Email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              className="input input-bordered w-full bg-white/20 text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-pink-400"
-            />
-            <input
-              type="text"
-              placeholder="Update Photo URL"
-              value={photoURL}
-              onChange={(e) => setPhotoURL(e.target.value)}
-              className="input input-bordered w-full bg-white/20 text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-pink-400"
-            />
+        {/* User Info */}
+        <div className="flex-1 flex flex-col gap-4">
+          <p>
+            <span className="font-semibold text-[#00FFFF]">Name: </span>
+            {user.displayName}
+          </p>
+          <p>
+            <span className="font-semibold text-[#00FFFF]">Email: </span>
+            {user.email}
+          </p>
 
-            <button
-              type="submit"
-              disabled={loading}
-              className="px-6 py-3 bg-gradient-to-r from-[#4C1D71] to-[#BE21E0] text-white rounded-lg hover:scale-105 transition-all font-semibold"
-            >
-              {loading ? "Updating..." : "Update Profile"}
-            </button>
-          </form>
+          <Link
+            to="/update-profile"
+            className="mt-4 px-6 py-2 bg-gradient-to-r from-[#4C1D71] to-[#BE21E0] text-white rounded-lg hover:scale-105 transition-all font-semibold text-center"
+          >
+            Update Information
+          </Link>
         </div>
       </div>
     </div>
