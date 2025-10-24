@@ -1,16 +1,70 @@
-# React + Vite
+# 🎮 GameHub
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+GameHub is a modern web app designed to help users explore, discover, and interact with their favorite games.  
+It provides a smooth user experience with authentication, game browsing, and responsive design — built using React and Tailwind CSS.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🌐 Live Demo  
+🔗 [GameHub Live](https://game-hub-9.netlify.app/)
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🧠 Purpose  
+The purpose of this project is to create a visually appealing and user-friendly platform where users can:
+- Browse and discover new games.
+- View detailed game information.
+- Sign in or register securely.
+- Manage their accounts easily through Firebase authentication.
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## ✨ Key Features
+
+- 🔐 **User Authentication**
+  - Sign in with Email & Password
+  - Google Authentication (Firebase)
+  - Forgot Password with Email Reset
+
+- 🎨 **Modern UI/UX**
+  - Fully responsive layout
+  - Clean and interactive design
+  - Smooth animations using  Motion
+
+- 🕹️ **Game Library**
+  - Browse popular games
+  - Interactive cards and hover effects
+
+- ⚙️ **Optimized Development Setup**
+  - Vite for fast builds
+  - Reusable components with React
+
+---
+
+## 🛠️ Tech Stack
+
+| Technology | Purpose |
+|-------------|----------|
+| **React.js** | Frontend Framework |
+| **Vite** | Fast build tool for React |
+| **Tailwind CSS** | Utility-first CSS framework for styling |
+| **Framer Motion** | Smooth animations and transitions |
+| **Firebase** | Authentication and user management |
+| **React Router DOM** | Routing and navigation |
+| **React Icons** | Scalable icons for UI |
+| **React Toastify** | Toast notifications for user feedback |
+| **react-spinners** | Beautiful loading animations and spinners |
+
+---
+
+## 📦 NPM Packages Used
+
+```bash
+npm install react-router-dom
+npm install motion
+npm install react-icons
+npm install react-toastify
+npm install firebase
+npm install tailwindcss
+npm install DaisyUI
+npm install react-spinners
