@@ -64,8 +64,8 @@ Follow these steps to run Creatify on your local machine:
 1. **Clone the repository**
 
 ```bash
-git clone https://github.com/ShamimWebDev/creatify-client.git
-cd creatify
+git clone https://github.com/ShamimWebDev/game-hub.git
+cd game-hub
 ```
 
 2. **Install dependencies**
