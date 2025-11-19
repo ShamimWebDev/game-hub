@@ -57,14 +57,52 @@ The purpose of this project is to create a visually appealing and user-friendly 
 
 ---
 
-## 📦 NPM Packages Used
+## 💻 How to Run Locally
+
+Follow these steps to run Creatify on your local machine:
+
+1. **Clone the repository**
 
 ```bash
-npm install react-router-dom
-npm install motion
-npm install react-icons
-npm install react-toastify
-npm install firebase
-npm install tailwindcss
-npm install DaisyUI
-npm install react-spinners
+git clone https://github.com/ShamimWebDev/creatify-client.git
+cd creatify
+```
+
+2. **Install dependencies**
+
+```bash
+npm install
+```
+
+3. **Set up environment variables**
+
+* Create a `.env` file in the root directory
+* Add Firebase configuration and any other necessary API keys
+
+4. **Start the development server**
+
+```bash
+npm run dev
+```
+
+* The app will run at [http://localhost:5173](http://localhost:5173) (Vite default)
+
+5. **Build for production**
+
+```bash
+npm run build
+```
+
+* Preview the production build:
+
+```bash
+npm run preview
+```
+
+6. **Lint the project**
+
+```bash
+npm run lint
+```
+
+Now you can explore and test Creatify fully on your local machine.
