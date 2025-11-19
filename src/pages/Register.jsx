@@ -139,7 +139,7 @@ const Register = () => {
           <motion.button
             whileHover={{ scale: 1.05 }}
             type="submit"
-            className="w-full px-4 py-2 rounded-lg bg-gradient-to-r from-[#0FB7D1] to-[#4C1D71] text-black font-semibold"
+            className="w-full px-4 py-2 rounded-lg bg-gradient-to-r from-[#0FB7D1] to-[#4C1D71] text-black font-semibold cursor-pointer"
           >
             Create account
           </motion.button>
@@ -148,9 +148,9 @@ const Register = () => {
             whileHover={{ scale: 1.05 }}
             onClick={handleGoogle}
             type="button"
-            className="w-full flex items-center justify-center gap-3 px-4 py-2 rounded-lg bg-[#062733] border border-[#0FB7D1] text-white mt-2"
+            className="w-full flex items-center justify-center gap-3 px-4 py-2 rounded-lg bg-[#062733] border border-[#0FB7D1] text-white mt-2 cursor-pointer"
           >
-            <FcGoogle className="text-2xl" /> Continue with Google
+            <FcGoogle className="text-2xl " /> Continue with Google
           </motion.button>
         </form>
 

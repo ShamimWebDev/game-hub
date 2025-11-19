@@ -87,7 +87,7 @@ const Signin = () => {
 
           <button
             type="submit"
-            className="w-full px-4 py-2 rounded-lg bg-gradient-to-r from-[#0FB7D1] to-[#4C1D71] text-black font-semibold"
+            className="w-full px-4 py-2 rounded-lg bg-gradient-to-r from-[#0FB7D1] to-[#4C1D71] text-black font-semibold cursor-pointer"
           >
             Sign in
           </button>
@@ -97,7 +97,7 @@ const Signin = () => {
 
         <button
           onClick={handleGoogle}
-          className="w-full flex items-center justify-center gap-3 px-4 py-2 rounded-lg bg-[#062733] border border-[#0FB7D1] text-white"
+          className="w-full flex items-center justify-center gap-3 px-4 py-2 rounded-lg bg-[#062733] border border-[#0FB7D1] text-white cursor-pointer"
         >
           <FcGoogle className="text-2xl" /> Continue with Google
         </button>
