@@ -1,26 +1,29 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect, useState, useMemo } from "react";
 import { GameContext } from "../context/GameContext";
 
 const Banner = () => {
   const { games, loading } = useContext(GameContext);
   const [current, setCurrent] = useState(0);
 
+  const topGames = useMemo(() => {
+    if (!games) return [];
+    return [...games]
+      .sort((a, b) => parseFloat(b.ratings) - parseFloat(a.ratings))
+      .slice(0, 3);
+  }, [games]);
+
   useEffect(() => {
-    if (games && games.length > 0) {
+    if (topGames.length > 0) {
       const interval = setInterval(() => {
-        setCurrent((prev) => (prev + 1) % Math.min(3, topGames.length));
+        setCurrent((prev) => (prev + 1) % topGames.length);
       }, 3000);
       return () => clearInterval(interval);
     }
-  }, [games]);
+  }, [topGames]);
 
   if (loading) return <p className="text-center mt-10">Loading...</p>;
   if (!games || games.length === 0)
     return <p className="text-center mt-10">No games available</p>;
-
-  const topGames = [...games]
-    .sort((a, b) => parseFloat(b.ratings) - parseFloat(a.ratings))
-    .slice(0, 3);
 
   return (
     <div className="w-full relative">

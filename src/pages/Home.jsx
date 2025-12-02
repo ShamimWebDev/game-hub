@@ -1,16 +1,24 @@
 import React from "react";
 import Newsletter from "../components/Newsletter";
-import Banner from "../components/banner";
+import Hero from "../components/Hero";
 import PopularGames from "../components/PopularGames";
+import Categories from "../components/Categories";
+import Blog from "../components/Blog";
 import useDocumentTitle from "../hook/useDocumentTitle";
 
+/**
+ * Home Page Component
+ * Serves as the landing page, aggregating various sections like Hero,
+ * Popular Games, Categories, Blog, and Newsletter.
+ */
 const Home = () => {
   useDocumentTitle("Home");
   return (
     <>
-      <Banner></Banner>
-      <PopularGames></PopularGames>
-
+      <Hero />
+      <PopularGames />
+      <Categories />
+      <Blog />
       <Newsletter />
     </>
   );

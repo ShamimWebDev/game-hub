@@ -46,7 +46,7 @@ const PopularGames = () => {
       ) : (
         <Suspense fallback={<LoadingSkeleton />}>
           <motion.div
-            className="flex flex-wrap gap-10 justify-center"
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 px-4 max-w-7xl mx-auto"
             initial="hidden"
             animate="visible"
             variants={{
@@ -56,7 +56,7 @@ const PopularGames = () => {
             }}
           >
             {games?.length > 0 ? (
-              games.slice(0, 3).map((game) => (
+              games.slice(0, 4).map((game) => (
                 <motion.div
                   key={game.id}
                   variants={{
@@ -64,12 +64,13 @@ const PopularGames = () => {
                     visible: { opacity: 1, scale: 1 },
                   }}
                   transition={{ duration: 0.4 }}
+                  className="h-full"
                 >
                   <GameCard game={game} />
                 </motion.div>
               ))
             ) : (
-              <p className="text-center text-white">No games available</p>
+              <p className="text-center text-white col-span-full">No games available</p>
             )}
           </motion.div>
         </Suspense>

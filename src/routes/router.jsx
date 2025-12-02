@@ -11,6 +11,7 @@ import AllGames from "../pages/AllGames";
 import AboutUs from "../pages/AboutUs";
 import Contact from "../pages/Contact";
 import FAQ from "../pages/FAQ";
+import Support from "../pages/Support";
 import NotFound from "../pages/NotFound";
 import PrivateRoute from "../privateRoute/PrivateRoute";
 import PublicRoute from "../privateRoute/PublicRoute"; // <-- PublicRoute
@@ -87,16 +88,22 @@ const router = createBrowserRouter([
       </DefaultLayout>
     ),
   },
+  {
+    path: "/support",
+    element: (
+      <DefaultLayout>
+        <Support />
+      </DefaultLayout>
+    ),
+  },
 
-  // Private route
+  // Public route
   {
     path: "gamedetails/:id",
     element: (
-      <PrivateRoute>
-        <DefaultLayout>
-          <GameDetails />
-        </DefaultLayout>
-      </PrivateRoute>
+      <DefaultLayout>
+        <GameDetails />
+      </DefaultLayout>
     ),
   },
 
